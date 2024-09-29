@@ -41,6 +41,22 @@ public class Fieldcentric extends LinearOpMode {
         br = hardwareMap.get(DcMotorEx.class, "br");
         bl = hardwareMap.get(DcMotorEx.class, "bl");
 
+        br.setDirection(DcMotorEx.Direction.REVERSE);
+        fl.setDirection(DcMotorEx.Direction.REVERSE);
+        bl.setDirection(DcMotorEx.Direction.FORWARD);
+        fr.setDirection(DcMotorEx.Direction.REVERSE);
+        // Reset encoders
+        fl.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
+        fr.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
+        bl.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
+        br.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
+
+        // Set to run without encoders
+        fl.setMode(DcMotorEx.RunMode.RUN_WITHOUT_ENCODER);
+        fr.setMode(DcMotorEx.RunMode.RUN_WITHOUT_ENCODER);
+        bl.setMode(DcMotorEx.RunMode.RUN_WITHOUT_ENCODER);
+        br.setMode(DcMotorEx.RunMode.RUN_WITHOUT_ENCODER);
+
         BNO055IMU.Parameters parameters = new BNO055IMU.Parameters();
         parameters.angleUnit = BNO055IMU.AngleUnit.DEGREES;
         parameters.mode = BNO055IMU.SensorMode.IMU;
@@ -67,7 +83,6 @@ public class Fieldcentric extends LinearOpMode {
         double frPower = (power * sin / maxSincos - turn);
         double blPower = (power * sin / maxSincos + turn);
         double brPower = (power * cos / maxSincos - turn);
-        double brPowertest2 = (power * cos / maxSincos - turn);
 
 
 
