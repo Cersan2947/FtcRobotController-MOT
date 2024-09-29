@@ -67,7 +67,7 @@ public class Fieldcentric extends LinearOpMode {
         double frPower = (power * sin / maxSincos - turn);
         double blPower = (power * sin / maxSincos + turn);
         double brPower = (power * cos / maxSincos - turn);
-        double brPowertest = (power * cos / maxSincos - turn);
+        double brPowertest2 = (power * cos / maxSincos - turn);
 
 
 
