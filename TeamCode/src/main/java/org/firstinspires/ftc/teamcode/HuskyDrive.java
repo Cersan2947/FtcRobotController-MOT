@@ -24,9 +24,7 @@ public class HuskyDrive extends LinearOpMode {
 
         while (opModeIsActive()) {
         double jx = -gamepad1.left_stick_y - gamepad1.right_stick_y;
-            bot.driveXYW(jx, 0, 0);
         double jy = -gamepad1.left_stick_x;
-            bot.driveXYW(jx, jy, 0);
         double jw = -gamepad1.right_stick_x;
             bot.driveXYW(jx, jy, jw);
             

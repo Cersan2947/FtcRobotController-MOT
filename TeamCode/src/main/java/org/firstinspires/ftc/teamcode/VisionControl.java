@@ -8,6 +8,8 @@ import org.firstinspires.ftc.robotcore.external.hardware.camera.controls.GainCon
 import org.firstinspires.ftc.vision.apriltag.AprilTagDetection;
 
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.LED;
+
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import org.firstinspires.ftc.vision.VisionPortal;
 
@@ -16,10 +18,17 @@ public class VisionControl extends RobotDrive {
     
     public AprilTagProcessor aprilTag;
     private VisionPortal visionPortal;
-    
+
+    public LED ledr;
+    public LED ledg;
+
     public void init(HardwareMap hardwareMap) {
         super.init(hardwareMap);
         initAprilTag(hardwareMap);
+        ledr = hardwareMap.get(LED.class, "ledr");
+        ledg = hardwareMap.get(LED.class, "ledg");
+        ledr.enable(false);
+        ledg.enable(true);
     }
     
     public void initAprilTag(HardwareMap hardwareMap) {
@@ -69,3 +78,4 @@ public class VisionControl extends RobotDrive {
     }
 
 }
+//aka mini bot

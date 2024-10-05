@@ -5,6 +5,7 @@ please don't change this file unless you add something new to the repo.
 Even if you aren't a collaborator, you might wanna read this,
 especially if you're forking the repo
 
+BasicDrive is the basic driving code.
 
 First off, RobotDrive
 That's all the stuff that needs to be initialized.
