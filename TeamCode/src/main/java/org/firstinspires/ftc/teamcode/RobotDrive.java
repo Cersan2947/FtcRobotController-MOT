@@ -56,16 +56,16 @@ public class RobotDrive {
                       (Math.abs(rx)+Math.abs(ry)+Math.abs(rw))
                   );
 
-        double lfPower = (rx - ry - rw) / denom;
-        double rfPower = (rx + ry + rw) / denom;
-        double lbPower = (rx + ry - rw) / denom;
-        double rbPower = (rx - ry + rw) / denom;
+        double flPower = (rx - ry - rw) / denom;
+        double frPower = (rx + ry + rw) / denom;
+        double blPower = (rx + ry - rw) / denom;
+        double brPower = (rx - ry + rw) / denom;
         
 
-        fl.setPower(lfPower);
-        fr.setPower(rfPower);
-        bl.setPower(lbPower);
-        br.setPower(rbPower);
+        fl.setPower(flPower);
+        fr.setPower(frPower);
+        bl.setPower(blPower);
+        br.setPower(brPower);
         
     }
     public void driveFieldXYW(double fx, double fy, double fw) {

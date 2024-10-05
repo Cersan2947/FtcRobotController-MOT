@@ -8,8 +8,8 @@ import com.qualcomm.hardware.rev.RevHubOrientationOnRobot.UsbFacingDirection;
 public class RobotValues {
     public static DcMotor.Direction LEFTDIR = DcMotor.Direction.REVERSE;
     public static DcMotor.Direction RIGHTDIR = DcMotor.Direction.FORWARD;
-    public static LogoFacingDirection LOGO_DIR = LogoFacingDirection.UP;
-    public static UsbFacingDirection USB_DIR = UsbFacingDirection.BACKWARD;
+    public static final LogoFacingDirection LOGO_DIR = LogoFacingDirection.UP;
+    public static final UsbFacingDirection USB_DIR = UsbFacingDirection.FORWARD;
     // define robot-specific motor/wheel constants
     public static final double TICKS_PER_REVOLUTION = 537.7;
     public static final double GEAR_RATIO = 1.0;

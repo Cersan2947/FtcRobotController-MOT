@@ -1,0 +1,49 @@
+Hello!
+I am going to walk you through what every file here is used for.
+For collaborators:
+please don't change this file unless you add something new to the repo.
+Even if you aren't a collaborator, you might wanna read this,
+especially if you're forking the repo
+
+
+First off, RobotDrive
+That's all the stuff that needs to be initialized.
+You should add this code to any class that deals with driving
+
+Next is csTeleop,
+That's the driver-controlled code.
+It pulls from many classes to work, so if something breaks,
+check all the classes it imports
+
+RobotValues is the constants folder.
+Do NOT change it unless something is broken.
+If something is broken, save that file before changing it so we have a backup pwease.
+
+HuskyDrive is also driver-controlled, and I'll eventually combine it into csTeleOp
+if Itkan gives us a Husky sensor
+
+For SensorHuskyLens, just read the comments.
+I think its sample code, not sure tho
+don't change it pls
+
+Ditto for ConceptAprilTagEasy
+
+RobotValues is the constants folder.
+Do NOT change it unless something is broken.
+If something is broken, save that file before changing it so we have a backup pwease.
+
+SimpleLogger is something I don't quite understand yet
+VisionControl is what it looks like, all the configs for vision control.
+Don't change it please
+
+And that's that for now! Thanks for reading.
+If you have any questions, my contact info is below.
+
+Discord: cersansalad
+Email: cersansalad@gmail.com
+
+I'll also be plugging my twitch here because I can fr
+twitch.tv/cersansalad
+please let me have this collaborators (>_<)
+
+

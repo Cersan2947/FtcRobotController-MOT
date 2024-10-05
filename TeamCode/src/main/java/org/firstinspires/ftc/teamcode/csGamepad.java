@@ -1,28 +1,31 @@
+// INTRODUCING
+// CERSAN SALAD'S MERGED GAMEPAD CONTROL 9000
+// this is NOT Techdiff's code (yes it is)
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.hardware.Gamepad;
 
-public class DualPad extends Gamepad {
+public class csGamepad extends Gamepad {
     static Gamepad emptyPad = new Gamepad();
     int count;
-    DualPad previous;
-    DualPad gamepad1;
-    DualPad gamepad2;
-    DualPad shift;
+    csGamepad previous;
+    csGamepad gamepad1;
+    csGamepad gamepad2;
+    csGamepad shift;
 
     public void init() {
         count = 0;
-        previous = new DualPad();
-        previous.gamepad1 = new DualPad();
-        previous.gamepad2 = new DualPad();
-        previous.shift = new DualPad();
-        gamepad1 = new DualPad();
-        gamepad2 = new DualPad();
-        previous.gamepad1.shift = new DualPad();
-        previous.gamepad2.shift = new DualPad();
-        gamepad1.shift = new DualPad();
-        gamepad2.shift = new DualPad();
-        shift = new DualPad();
+        previous = new csGamepad();
+        previous.gamepad1 = new csGamepad();
+        previous.gamepad2 = new csGamepad();
+        previous.shift = new csGamepad();
+        gamepad1 = new csGamepad();
+        gamepad2 = new csGamepad();
+        previous.gamepad1.shift = new csGamepad();
+        previous.gamepad2.shift = new csGamepad();
+        gamepad1.shift = new csGamepad();
+        gamepad2.shift = new csGamepad();
+        shift = new csGamepad();
 
         // map uninitialized references to objects created above
         // this allows ".shift.gamepad1" as an alias for ".gamepad1.shift",

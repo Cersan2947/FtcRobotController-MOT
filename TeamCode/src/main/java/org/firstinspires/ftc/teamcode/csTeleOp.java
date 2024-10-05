@@ -6,11 +6,11 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import java.util.List;
 
 
-@TeleOp(name="MainTeleOp")
-public class ATeleop extends LinearOpMode {
+@TeleOp(name="Cersan's Code of Craziness")
+public class csTeleOp extends LinearOpMode {
 
     public VisionControl bot;
-    public DualPad gpad;
+    public csGamepad gpad;
 
     @Override
     public void runOpMode() {
@@ -18,7 +18,7 @@ public class ATeleop extends LinearOpMode {
         bot.init(hardwareMap);
         bot.setManualExposure(this, 6, 120);
         
-        gpad = new DualPad();
+        gpad = new csGamepad();
 
         telemetry.addData("Status", "Initialized");
         telemetry.update();
