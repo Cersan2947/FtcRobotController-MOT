@@ -32,7 +32,6 @@ RobotValues is the constants folder.
 Do NOT change it unless something is broken.
 If something is broken, save that file before changing it so we have a backup pwease.
 
-SimpleLogger is something I don't quite understand yet
 VisionControl is what it looks like, all the configs for vision control.
 Don't change it please
 
