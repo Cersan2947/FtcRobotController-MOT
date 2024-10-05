@@ -6,13 +6,13 @@ import org.firstinspires.ftc.robotcore.external.hardware.camera.controls.Exposur
 import java.util.concurrent.TimeUnit;
 import org.firstinspires.ftc.robotcore.external.hardware.camera.controls.GainControl;
 import org.firstinspires.ftc.vision.apriltag.AprilTagDetection;
-import com.qualcomm.robotcore.robot.Robot;
+
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import org.firstinspires.ftc.vision.VisionPortal;
 
 
-public class Minibot extends RobotDrive {
+public class VisionControl extends RobotDrive {
     
     public AprilTagProcessor aprilTag;
     private VisionPortal visionPortal;

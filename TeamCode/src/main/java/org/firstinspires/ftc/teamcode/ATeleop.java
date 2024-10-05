@@ -9,12 +9,12 @@ import java.util.List;
 @TeleOp(name="MainTeleOp")
 public class ATeleop extends LinearOpMode {
 
-    public Minibot bot;
+    public VisionControl bot;
     public DualPad gpad;
 
     @Override
     public void runOpMode() {
-        bot = new Minibot();
+        bot = new VisionControl();
         bot.init(hardwareMap);
         bot.setManualExposure(this, 6, 120);
         

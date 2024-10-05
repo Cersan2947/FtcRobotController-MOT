@@ -5,7 +5,7 @@ import com.qualcomm.hardware.dfrobot.HuskyLens;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 @TeleOp(name="Basic Drive Test")
-public class HuskyDriveDemo extends LinearOpMode {
+public class HuskyDrive extends LinearOpMode {
 
     public RobotDrive bot;
     public HuskyLens huskylens;

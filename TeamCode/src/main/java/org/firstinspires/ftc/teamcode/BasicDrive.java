@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 @TeleOp(name="Basic Drive Test")
-public class BasicDriveDemo extends LinearOpMode {
+public class BasicDrive extends LinearOpMode {
 
     public RobotDrive bot;
 
