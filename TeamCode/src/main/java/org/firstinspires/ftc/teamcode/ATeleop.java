@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import java.util.List;
 
 
-@TeleOp(name="Basic Drive Test")
+@TeleOp(name="MainTeleOp")
 public class ATeleop extends LinearOpMode {
 
     public Minibot bot;
