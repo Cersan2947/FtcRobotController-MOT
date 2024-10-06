@@ -7,12 +7,12 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 @TeleOp(name="Husky Test")
 public class HuskyDrive extends LinearOpMode {
 
-    public RobotDrive bot;
+    public RobotDrivePm bot;
     public HuskyLens huskylens;
 
     @Override
     public void runOpMode() {
-        bot = new RobotDrive();
+        bot = new RobotDrivePm();
         bot.init(hardwareMap);
         
         huskylens = hardwareMap.get(HuskyLens.class, "huskylens");

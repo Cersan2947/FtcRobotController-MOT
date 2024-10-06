@@ -1,7 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.hardware.DcMotorEx;
-import com.qualcomm.robotcore.robot.Robot;
+
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
 import com.qualcomm.robotcore.hardware.IMU;
@@ -11,27 +11,27 @@ import static org.firstinspires.ftc.teamcode.RobotValues.*;
 
 public class RobotDrivePm {
 
-    DcMotorEx lf;
-    DcMotorEx rf;
-    DcMotorEx lb;
-    DcMotorEx rb;
+    DcMotorEx fl;
+    DcMotorEx fr;
+    DcMotorEx bl;
+    DcMotorEx br;
     
     IMU imu;
     static double headingOffset = 0;
     
     Pose field = new Pose(0,0,0);
     
-    int lfTicksPrev = 0;
-    int rfTicksPrev = 0;
-    int lbTicksPrev = 0;
-    int rbTicksPrev = 0;
+    int flTicksPrev = 0;
+    int frTicksPrev = 0;
+    int blTicksPrev = 0;
+    int brTicksPrev = 0;
     double headingPrev = 0;
     
     public void init(HardwareMap hardwareMap) {
-        lf = initDcMotor(hardwareMap, "lf", LEFTDIR);
-        rf = initDcMotor(hardwareMap, "rf", RIGHTDIR);
-        lb = initDcMotor(hardwareMap, "lb", LEFTDIR);
-        rb = initDcMotor(hardwareMap, "rb", RIGHTDIR);
+        fl = initDcMotor(hardwareMap, "fl", LEFTDIR);
+        fr = initDcMotor(hardwareMap, "fr", RIGHTDIR);
+        bl = initDcMotor(hardwareMap, "bl", LEFTDIR);
+        br = initDcMotor(hardwareMap, "br", RIGHTDIR);
         initIMU(hardwareMap);
         setFieldXY(0,0);
     }
@@ -76,15 +76,15 @@ public class RobotDrivePm {
         double denom = Math.max(
                             Math.abs(rx)+Math.abs(ry)+Math.abs(rw),
                             1);
-        double lfPower = (rx - ry - rw) / denom;
-        double rfPower = (rx + ry + rw) / denom;
-        double lbPower = (rx + ry - rw) / denom;
-        double rbPower = (rx - ry + rw) / denom;
+        double flPower = (rx - ry - rw) / denom;
+        double frPower = (rx + ry + rw) / denom;
+        double blPower = (rx + ry - rw) / denom;
+        double brPower = (rx - ry + rw) / denom;
         
-        lf.setPower(lfPower);
-        rf.setPower(rfPower);
-        lb.setPower(lbPower);
-        rb.setPower(rbPower);
+        fl.setPower(flPower);
+        fr.setPower(frPower);
+        bl.setPower(blPower);
+        br.setPower(brPower);
     }
     
     public void driveFieldXYW(double fx, double fy, double fw, double rot) {
@@ -109,10 +109,10 @@ public class RobotDrivePm {
         double lfD = (lfTicks - lfTicksPrev) / TICKS_PER_REVOLUTION;
         double rfD = (rfTicks - rfTicksPrev) / TICKS_PER_REVOLUTION;
         double lbD = (lbTicks - lbTicksPrev) / TICKS_PER_REVOLUTION;
-        double rbD = (rbTicks - rbTicksPrev) / TICKS_PER_REVOLUTION;
+        double rbD = (rbTicks - brTicksPrev) / TICKS_PER_REVOLUTION;
         
         // remember new tick values
-        lfTicksPrev=lfTicks; rfTicksPrev=rfTicks; lbTicksPrev=lbTicks; rbTicksPrev=rbTicks;
+        lfTicksPrev=lfTicks; rfTicksPrev=rfTicks; lbTicksPrev=lbTicks; brTicksPrev =rbTicks;
 
         // calculate delta distances in field units (rdx, rdy, rdw)
         double rdx = ((lfD + rfD + lbD + rbD) * DISTANCE_PER_REVOLUTION) / 4.0;

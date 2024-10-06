@@ -6,12 +6,12 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 @TeleOp(name="Base Drive")
 public class DriveLogger extends LinearOpMode {
 
-    public RobotDrive bot;
+    public RobotDrivePm bot;
     public Logger log;
 
     @Override
     public void runOpMode() {
-        bot = new RobotDrive();
+        bot = new RobotDrivePm();
         bot.init(hardwareMap);
 
         log = new Logger();
