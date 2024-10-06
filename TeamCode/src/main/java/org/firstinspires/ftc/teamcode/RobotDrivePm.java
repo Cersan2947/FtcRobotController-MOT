@@ -86,7 +86,6 @@ public class RobotDrivePm {
         bl.setPower(blPower);
         br.setPower(brPower);
     }
-    
     public void driveFieldXYW(double fx, double fy, double fw, double rot) {
         // rotate field orientation to robot orientation
         double theta = Math.toRadians(getHeading()) + rot;
@@ -100,23 +99,26 @@ public class RobotDrivePm {
         double heading = getHeading();
         
         // get current motor ticks
-        int lfTicks = lf.getCurrentPosition();
-        int rfTicks = rf.getCurrentPosition();
-        int lbTicks = lb.getCurrentPosition();
-        int rbTicks = rb.getCurrentPosition();
+        int flTicks = fl.getCurrentPosition();
+        int frTicks = fr.getCurrentPosition();
+        int blTicks = bl.getCurrentPosition();
+        int brTicks = br.getCurrentPosition();
         
         // determine angular delta (rotations) for each motor
-        double lfD = (lfTicks - lfTicksPrev) / TICKS_PER_REVOLUTION;
-        double rfD = (rfTicks - rfTicksPrev) / TICKS_PER_REVOLUTION;
-        double lbD = (lbTicks - lbTicksPrev) / TICKS_PER_REVOLUTION;
-        double rbD = (rbTicks - brTicksPrev) / TICKS_PER_REVOLUTION;
-        
+        double flD = (flTicks - flTicksPrev) / TICKS_PER_REVOLUTION;
+        double frD = (frTicks - frTicksPrev) / TICKS_PER_REVOLUTION;
+        double blD = (blTicks - blTicksPrev) / TICKS_PER_REVOLUTION;
+        double rbD = (brTicks - brTicksPrev) / TICKS_PER_REVOLUTION;
+
         // remember new tick values
-        lfTicksPrev=lfTicks; rfTicksPrev=rfTicks; lbTicksPrev=lbTicks; brTicksPrev =rbTicks;
+        flTicksPrev = flTicks;
+        frTicksPrev = frTicks;
+        blTicksPrev = blTicks;
+        brTicksPrev = brTicks;
 
         // calculate delta distances in field units (rdx, rdy, rdw)
-        double rdx = ((lfD + rfD + lbD + rbD) * DISTANCE_PER_REVOLUTION) / 4.0;
-        double rdy = ((-lfD + rfD + lbD - rbD) * DISTANCE_PER_REVOLUTION) / 4.0;
+        double rdx = ((flD + frD + blD + rbD) * DISTANCE_PER_REVOLUTION) / 4.0;
+        double rdy = ((-flD + frD + blD - rbD) * DISTANCE_PER_REVOLUTION) / 4.0;
         double rdw = Math.toRadians(heading - headingPrev);
         headingPrev = heading;
         

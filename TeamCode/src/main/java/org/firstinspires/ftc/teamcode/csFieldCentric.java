@@ -64,7 +64,9 @@ public class csFieldCentric extends LinearOpMode {
                 bot.driveToPose(targetPose, 0.3);
             }
             else{
-                bot.driveFieldXYW(jx, jy, jw);
+                // rot = rotation
+                // make rot the direction the robot is facing
+                bot.driveFieldXYW(jx, jy, jw, 90);
             }
 
             bot.ledg.enable(tagSeen);
