@@ -1,6 +1,9 @@
 // INTRODUCING
 // CERSAN SALAD'S MERGED GAMEPAD CONTROL 9000
+// This code allows gamepad 1 and gamepad 2 to do the same actions
+// It also allows a shift toggle via the left bumper
 // this is NOT Techdiff's code (yes it is)
+// Me happy :D
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.hardware.Gamepad;

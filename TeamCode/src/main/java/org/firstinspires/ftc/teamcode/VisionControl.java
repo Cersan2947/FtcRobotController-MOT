@@ -14,7 +14,7 @@ import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import org.firstinspires.ftc.vision.VisionPortal;
 
 
-public class VisionControl extends RobotDrive {
+public class VisionControl extends RobotDrivePm {
     
     public AprilTagProcessor aprilTag;
     private VisionPortal visionPortal;

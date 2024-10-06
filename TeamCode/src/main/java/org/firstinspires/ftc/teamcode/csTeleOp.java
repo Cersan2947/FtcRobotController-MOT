@@ -1,13 +1,11 @@
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.vision.apriltag.AprilTagDetection;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import java.util.List;
 
-@Disabled
-// @TeleOp(name="Cersan's Code of Craziness")
+@TeleOp(name="Cersan's Code of Craziness")
 public class csTeleOp extends LinearOpMode {
 
     public VisionControl bot;
@@ -23,10 +21,16 @@ public class csTeleOp extends LinearOpMode {
 
         telemetry.addData("Status", "Initialized");
         telemetry.update();
+        // Wait for the driver to press play
         waitForStart();
 
+        VisionControl.Pose targetPose = new VisionControl.Pose(24, 0);
+        // runs until the driver presses stop
         while (opModeIsActive()) {
             gpad.update(gamepad1, gamepad2);
+            bot.updateTracking();
+            telemetry.addData("field pose", bot.field);
+            telemetry.addData("targetPose", targetPose);
             double jx = -gpad.left_stick_y - gpad.right_stick_y;
             double jy = -gpad.left_stick_x;
             double jw = -gpad.right_stick_x;
@@ -48,6 +52,19 @@ public class csTeleOp extends LinearOpMode {
                 }
                 telemetry.addData("tag", bot.format(detection));
             }
+
+            // use current pose as new target
+            if(gpad.shift.back){
+                targetPose = new VisionControl.Pose(bot.field);
+            }
+
+            if(gpad.back){
+                bot.driveToPose(targetPose, 0.3);
+            }
+            else{
+                bot.driveXYW(jx, jy, jw);
+            }
+
             bot.ledg.enable(tagSeen);
             telemetry.addData("Status", "Running");
             telemetry.addData("heading", bot.getHeading());

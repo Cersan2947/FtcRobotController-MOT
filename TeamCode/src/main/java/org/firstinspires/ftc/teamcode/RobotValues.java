@@ -1,4 +1,4 @@
-// change this for our robot
+// change this for our robot then uncomment
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -18,8 +18,8 @@ public class RobotValues {
 
     // define calculated constants
     public static final double WHEEL_CIRCUMFERENCE =
-          WHEEL_DIAMETER * Math.PI;
+            WHEEL_DIAMETER * Math.PI;
     public static final double DISTANCE_PER_REVOLUTION =
-          WHEEL_CIRCUMFERENCE * GEAR_RATIO;
+            WHEEL_CIRCUMFERENCE * GEAR_RATIO;
 
 }

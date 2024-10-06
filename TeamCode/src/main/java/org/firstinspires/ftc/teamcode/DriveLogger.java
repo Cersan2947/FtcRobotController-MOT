@@ -28,7 +28,7 @@ public class DriveLogger extends LinearOpMode {
         int logUntil = 0;
 
         while (opModeIsActive()) {
-            loopCount++
+            loopCount++;
             double jx = -gamepad1.left_stick_y - gamepad1.right_stick_y;
             double jy = -gamepad1.left_stick_x;
             double jw = -gamepad1.right_stick_x;
