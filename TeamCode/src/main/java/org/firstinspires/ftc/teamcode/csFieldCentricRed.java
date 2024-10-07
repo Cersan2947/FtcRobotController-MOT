@@ -8,7 +8,7 @@ import org.firstinspires.ftc.vision.apriltag.AprilTagDetection;
 import java.util.List;
 
 @TeleOp(name="Cersan's Code of Craziness")
-public class csFieldCentric extends LinearOpMode {
+public class csFieldCentricRed extends LinearOpMode {
 
     public VisionControl bot;
     public csGamepad gpad;
@@ -66,7 +66,9 @@ public class csFieldCentric extends LinearOpMode {
             else{
                 // rot = rotation
                 // make rot the direction the robot is facing
-                bot.driveFieldXYW(jx, jy, jw, 90);
+                // since this is for red, It'll be facing 270 after auton I think
+                // if it doesn't, I'll change it ig
+                bot.driveFieldXYW(jx, jy, jw, 270);
             }
 
             bot.ledg.enable(tagSeen);
